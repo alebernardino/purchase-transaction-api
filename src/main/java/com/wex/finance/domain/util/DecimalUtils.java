@@ -49,7 +49,7 @@ public final class DecimalUtils {
         if (amountUSD == null || exchangeRate == null) {
             throw new IllegalArgumentException("Amount and exchange rate cannot be null");
         }
-        return ROUND_TO_USD.apply(amountUSD.multiply(exchangeRate));
+        return ROUND_TO_USD.apply(amountUSD.add(exchangeRate));
     }
 
     public static Function<BigDecimal, BigDecimal> createConverter(BigDecimal exchangeRate) {
